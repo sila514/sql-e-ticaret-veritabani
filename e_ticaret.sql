@@ -1,4 +1,4 @@
--- TABLOLAR OLUŞTURULUYOR
+
 CREATE TABLE Musteriler (
     MusteriID INT PRIMARY KEY,
     Ad VARCHAR(50),
@@ -38,7 +38,7 @@ CREATE TABLE Calisanlar (
     Departman VARCHAR(50)
 );
 
--- ÖRNEK VERİLER EKLENİYOR
+
 INSERT INTO Musteriler VALUES (1, 'Ahmet', 'Yılmaz', 'ahmet@gmail.com', '05001234567');
 INSERT INTO Musteriler VALUES (2, 'Ayşe', 'Kara', 'ayse@gmail.com', '05007654321');
 
@@ -52,7 +52,7 @@ INSERT INTO SiparisDetaylari VALUES (2, 1, 2, 1);
 INSERT INTO Calisanlar VALUES (1, 'Emre', 'Demir', 'Satış');
 INSERT INTO Calisanlar VALUES (2, 'Selin', 'Koç', 'Destek');
 
--- ÖRNEK SORULAR (Sorgular)
+
 -- 1. Müşterilerin siparişlerini getir
 SELECT m.Ad, m.Soyad, s.SiparisID, s.Tarih, s.ToplamTutar
 FROM Musteriler m
