@@ -53,17 +53,16 @@ INSERT INTO Calisanlar VALUES (1, 'Emre', 'Demir', 'Satış');
 INSERT INTO Calisanlar VALUES (2, 'Selin', 'Koç', 'Destek');
 
 
--- 1. Müşterilerin siparişlerini getir
+ 1. Müşterilerin siparişlerini getir
 SELECT m.Ad, m.Soyad, s.SiparisID, s.Tarih, s.ToplamTutar
 FROM Musteriler m
 JOIN Siparisler s ON m.MusteriID = s.MusteriID;
 
--- 2. En çok satılan ürünler
+2. En çok satılan ürünler
 SELECT u.UrunAdi, SUM(sd.Adet) AS ToplamSatis
 FROM SiparisDetaylari sd
 JOIN Urunler u ON sd.UrunID = u.UrunID
 GROUP BY u.UrunAdi
 ORDER BY ToplamSatis DESC;
-
--- 3. Stokta kalmayan ürünleri getir
+ 3. Stokta kalmayan ürünleri getir
 SELECT * FROM Urunler WHERE StokMiktari = 0;
